@@ -1,599 +1,223 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hxhdhcjmet's Blog - 古今多少事,都付谈笑中</title><meta name="author" content="Sakura"><meta name="copyright" content="Sakura"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hxhdhcjmet&#39;s Blog">
+<meta property="og:url" content="https://hxhdhcjmet.github.io/index.html">
+<meta property="og:site_name" content="Hxhdhcjmet&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hxhdhcjmet.github.io/images/avatar.jpg">
+<meta property="article:author" content="Sakura">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://hxhdhcjmet.github.io/images/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hxhdhcjmet's Blog",
+  "alternateName": [
+    "古今多少事,都付谈笑中",
+    "hxhdhcjmet.github.io"
+  ],
+  "url": "https://hxhdhcjmet.github.io/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hxhdhcjmet.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.2"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hxhdhcjmet\'s Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/images/background.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hxhdhcjmet's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Hxhdhcjmet's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/hxhdhcjmet" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lyj20060608@gmail.com" target="_blank" title="Email"><i class="as fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2871148635&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" title="LaTeX与Git协作技术分享">LaTeX与Git协作技术分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-06-19T03:41:44.000Z" title="发表于 2026-06-19 11:41:44">2026-06-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></span></div><div class="content">本地配置 LaTeX 环境：高效协作指南1. 引言LaTeX 很适合用来撰写实验报告、课程设计报告和论文类文档。相比 Word，它在数学公式、交叉引用、目录、图表编号和参考文献管理方面更稳定，也更适合多人维护同一个文档。 Overleaf 这类在线平台确实省去了本地配置的麻烦，但免费版通常会遇到编译时间限制、项目数量限制、协作人数限制等问题。对于需要频繁插图、反复编译、多人成员同时修改的实验报告项目，本地 LaTeX 环境配合 Git 往往更高效、更可控。 本文主要分享一种适合实验报告协作的工作方式：本地使用 VS Code + LaTeX Workshop 写报告，用 Git 管理版本，用 GitHub&#x2F;Gitee 等平台同步和合并。目标不是把 LaTeX 所有语法讲完，而是给出一套能直接落地的项目结构和协作流程。 一句话总结：LaTeX 负责排版，Git 负责协作，VS Code 负责把两者连起来。 2. 环境配置2.1 安装 LaTeX 编译环境LaTeX 需要先安装本地发行版，常见选择如下：    系统 推荐工具 说明    Windows TeX Live 或...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/06/19/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-06-19T03:06:31.492Z" title="发表于 2026-06-19 11:06:31">2026-06-19</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sakura</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hxhdhcjmet"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/hxhdhcjmet" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lyj20060608@gmail.com" target="_blank" title="Email"><i class="as fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2871148635&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" title="LaTeX与Git协作技术分享">LaTeX与Git协作技术分享</a><time datetime="2026-06-19T03:41:44.000Z" title="发表于 2026-06-19 11:41:44">2026-06-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/19/hello-world/" title="Hello World">Hello World</a><time datetime="2026-06-19T03:06:31.492Z" title="发表于 2026-06-19 11:06:31">2026-06-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">技术笔记</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/LaTeX/" style="font-size: 1.1em; color: #999">LaTeX</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-LaTeX与Git协作技术分享" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="article-date">
-  <time class="dt-published" datetime="2026-06-19T03:41:44.000Z" itemprop="datePublished">2026-06-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">LaTeX与Git协作技术分享</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <h1 id="本地配置-LaTeX-环境：高效协作指南"><a href="#本地配置-LaTeX-环境：高效协作指南" class="headerlink" title="本地配置 LaTeX 环境：高效协作指南"></a>本地配置 LaTeX 环境：高效协作指南</h1><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>LaTeX 很适合用来撰写实验报告、课程设计报告和论文类文档。相比 Word，它在数学公式、交叉引用、目录、图表编号和参考文献管理方面更稳定，也更适合多人维护同一个文档。</p>
-<p>Overleaf 这类在线平台确实省去了本地配置的麻烦，但免费版通常会遇到编译时间限制、项目数量限制、协作人数限制等问题。对于需要频繁插图、反复编译、多人成员同时修改的实验报告项目，本地 LaTeX 环境配合 Git 往往更高效、更可控。</p>
-<p>本文主要分享一种适合实验报告协作的工作方式：本地使用 VS Code + LaTeX Workshop 写报告，用 Git 管理版本，用 GitHub&#x2F;Gitee 等平台同步和合并。目标不是把 LaTeX 所有语法讲完，而是给出一套能直接落地的项目结构和协作流程。</p>
-<p>一句话总结：<strong>LaTeX 负责排版，Git 负责协作，VS Code 负责把两者连起来。</strong></p>
-<h2 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2. 环境配置"></a>2. 环境配置</h2><h3 id="2-1-安装-LaTeX-编译环境"><a href="#2-1-安装-LaTeX-编译环境" class="headerlink" title="2.1 安装 LaTeX 编译环境"></a>2.1 安装 LaTeX 编译环境</h3><p>LaTeX 需要先安装本地发行版，常见选择如下：</p>
-<table>
-<thead>
-<tr>
-<th>系统</th>
-<th>推荐工具</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Windows</td>
-<td>TeX Live 或 MiKTeX</td>
-<td>TeX Live 体积较大但完整；MiKTeX 较轻量</td>
-</tr>
-<tr>
-<td>macOS</td>
-<td>MacTeX</td>
-<td>基于 TeX Live，适合 macOS</td>
-</tr>
-<tr>
-<td>Linux</td>
-<td>TeX Live</td>
-<td>可通过系统包管理器安装</td>
-</tr>
-</tbody></table>
-<p>中文实验报告建议优先使用 <strong>XeLaTeX</strong> 编译，因为它对中文和系统字体支持更友好。</p>
-<p>安装完成后，可以在终端中检查：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xelatex <span class="literal">--version</span></span><br><span class="line">latexmk <span class="literal">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>如果命令无法识别，通常是环境变量没有配置好，或者安装过程没有完成。</p>
-<h3 id="2-2-安装-Git"><a href="#2-2-安装-Git" class="headerlink" title="2.2 安装 Git"></a>2.2 安装 Git</h3><p>Git 用来管理版本和多人协作。安装完成后，在终端中检查：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="literal">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>第一次使用 Git 时，建议配置用户名和邮箱：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> user.name <span class="string">&quot;你的名字&quot;</span></span><br><span class="line">git config <span class="literal">--global</span> user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的用户名和邮箱会出现在提交记录中，方便团队成员知道每次修改是谁完成的。</p>
-<h3 id="2-3-安装-VS-Code-和插件"><a href="#2-3-安装-VS-Code-和插件" class="headerlink" title="2.3 安装 VS Code 和插件"></a>2.3 安装 VS Code 和插件</h3><p>推荐使用 VS Code，并安装以下插件：</p>
-<ul>
-<li><strong>LaTeX Workshop</strong>：提供 LaTeX 编译、预览、错误定位等功能</li>
-<li><strong>GitLens</strong>：增强 Git 历史记录查看能力，可选</li>
-<li><strong>Markdown All in One</strong>：方便维护项目说明文档，可选</li>
-</ul>
-<p>LaTeX Workshop 安装后，可以在 VS Code 的 <code>settings.json</code> 中加入以下配置：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.autoBuild.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.outDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;%DIR%/build&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.view.pdf.viewer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tab&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipe.default&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lastUsed&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk (xelatex)&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;latexmk&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-outdir=%OUTDIR%&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-output-directory=%OUTDIR%&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>其中最重要的是：</p>
-<ul>
-<li><code>autoBuild.run: &quot;never&quot;</code>：关闭自动编译，避免每次保存都触发编译导致卡顿</li>
-<li><code>outDir: &quot;%DIR%/build&quot;</code>：把编译中间文件统一放到 <code>build/</code> 目录</li>
-<li><code>latexmk (xelatex)</code>：适合需要目录、引用、参考文献的文档，能自动多轮编译</li>
-</ul>
-<p>手动编译可以使用 LaTeX Workshop 的侧边栏按钮，也可以使用快捷键 <code>Ctrl+Alt+B</code>。</p>
-<h2 id="3-推荐项目结构"><a href="#3-推荐项目结构" class="headerlink" title="3. 推荐项目结构"></a>3. 推荐项目结构</h2><h3 id="3-1-不要把所有内容写进一个文件"><a href="#3-1-不要把所有内容写进一个文件" class="headerlink" title="3.1 不要把所有内容写进一个文件"></a>3.1 不要把所有内容写进一个文件</h3><p>实验报告一旦超过几页，就不建议把所有内容塞进一个 <code>main.tex</code>。单文件写法前期看起来简单，后期会出现几个问题：</p>
-<ul>
-<li>文件越来越长，查找和修改困难</li>
-<li>多人同时编辑同一个文件，Git 冲突会变多</li>
-<li>图片、代码、参考文献分散，项目难以维护</li>
-<li>格式定义和正文混在一起，复用性差</li>
-</ul>
-<p>更推荐把 LaTeX 项目当成一个小型代码项目来管理：主文件只负责组织结构，正文、图片、格式、参考文献分目录存放。</p>
-<h3 id="3-2-推荐目录结构"><a href="#3-2-推荐目录结构" class="headerlink" title="3.2 推荐目录结构"></a>3.2 推荐目录结构</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">实验报告项目/</span><br><span class="line">├── main.tex                    # 主文件，只负责组织全文结构</span><br><span class="line">├── README.md                   # 项目说明、分工、编译方式</span><br><span class="line">├── .gitignore                  # 忽略编译中间文件</span><br><span class="line">├── format/</span><br><span class="line">│   ├── labreport.cls           # 自定义文档类</span><br><span class="line">│   └── custom.sty              # 自定义命令、环境、样式</span><br><span class="line">├── content/</span><br><span class="line">│   ├── abstract.tex            # 摘要</span><br><span class="line">│   ├── environment.tex         # 实验环境</span><br><span class="line">│   ├── principle.tex           # 实验原理</span><br><span class="line">│   ├── task1.tex               # 任务一主文件</span><br><span class="line">│   ├── task2.tex               # 任务二主文件</span><br><span class="line">│   ├── conclusion.tex          # 总结</span><br><span class="line">│   ├── task1/</span><br><span class="line">│   │   ├── plan.tex            # 任务一方案设计</span><br><span class="line">│   │   ├── process.tex         # 任务一实现过程</span><br><span class="line">│   │   └── result.tex          # 任务一结果分析</span><br><span class="line">│   └── task2/</span><br><span class="line">│       ├── plan.tex</span><br><span class="line">│       ├── process.tex</span><br><span class="line">│       └── result.tex</span><br><span class="line">├── figure/</span><br><span class="line">│   ├── task1/</span><br><span class="line">│   └── task2/</span><br><span class="line">├── code/</span><br><span class="line">│   ├── task1/</span><br><span class="line">│   └── task2/</span><br><span class="line">├── refs/</span><br><span class="line">│   └── references.bib          # BibTeX 参考文献</span><br><span class="line">└── build/                      # 编译输出目录，不提交到 Git</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<table>
-<thead>
-<tr>
-<th>目录&#x2F;文件</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>main.tex</code></td>
-<td>全文入口，负责引入各章节</td>
-</tr>
-<tr>
-<td><code>format/</code></td>
-<td>存放模板、格式、自定义命令</td>
-</tr>
-<tr>
-<td><code>content/</code></td>
-<td>存放正文内容</td>
-</tr>
-<tr>
-<td><code>figure/</code></td>
-<td>存放图片，建议按任务分类</td>
-</tr>
-<tr>
-<td><code>code/</code></td>
-<td>存放实验代码或关键代码片段</td>
-</tr>
-<tr>
-<td><code>refs/</code></td>
-<td>存放参考文献数据库</td>
-</tr>
-<tr>
-<td><code>build/</code></td>
-<td>存放编译产物，不建议提交</td>
-</tr>
-</tbody></table>
-<p>第三方宏包一般不需要复制到项目里，例如 <code>ctex</code>、<code>amsmath</code>、<code>graphicx</code> 等都应该由本地 LaTeX 发行版提供。项目里只放自己写的模板文件和样式文件即可。</p>
-<h2 id="4-基础模板示例"><a href="#4-基础模板示例" class="headerlink" title="4. 基础模板示例"></a>4. 基础模板示例</h2><h3 id="4-1-main-tex"><a href="#4-1-main-tex" class="headerlink" title="4.1 main.tex"></a>4.1 <code>main.tex</code></h3><p><code>main.tex</code> 应该尽量保持简洁，只负责组织文章结构。</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;format/labreport&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\title</span>&#123;实验报告标题&#125;</span><br><span class="line"><span class="keyword">\author</span>&#123;姓名1 <span class="keyword">\quad</span> 姓名2 <span class="keyword">\quad</span> 姓名3&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\maketitle</span></span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\newpage</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\input</span>&#123;content/abstract.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/environment.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/principle.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/task1.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/task2.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/conclusion.tex&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line"><span class="keyword">\bibliography</span>&#123;refs/references&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：<code>\input{}</code> 的路径是以 <code>main.tex</code> 所在目录为基准的，不是以当前被引入文件所在目录为基准。</p>
-<p>例如在 <code>content/task1.tex</code> 中继续引入 <code>content/task1/plan.tex</code>，应该写：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\input</span>&#123;content/task1/plan.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/task1/process.tex&#125;</span><br><span class="line"><span class="keyword">\input</span>&#123;content/task1/result.tex&#125;</span><br></pre></td></tr></table></figure>
-
-<p>不要写成：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\input</span>&#123;task1/plan.tex&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为编译入口仍然是 <code>main.tex</code>。</p>
-<h3 id="4-2-format-labreport-cls"><a href="#4-2-format-labreport-cls" class="headerlink" title="4.2 format/labreport.cls"></a>4.2 <code>format/labreport.cls</code></h3><p>建议不要把自定义文档类命名为 <code>report.cls</code>，因为 LaTeX 本身就有标准 <code>report</code> 文档类，容易混淆。可以使用更明确的名字，例如 <code>labreport.cls</code>。</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\NeedsTeXFormat</span>&#123;LaTeX2e&#125;</span><br><span class="line"><span class="keyword">\ProvidesClass</span>&#123;labreport&#125;[2026/06/12 Lab report template]</span><br><span class="line"></span><br><span class="line"><span class="keyword">\LoadClass</span>[12pt,a4paper]&#123;article&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\RequirePackage</span>[UTF8]&#123;ctex&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;geometry&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amssymb&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;graphicx&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;booktabs&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;xcolor&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;listings&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;hyperref&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\geometry</span>&#123;left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\hypersetup</span>&#123;</span><br><span class="line">  colorlinks=true,</span><br><span class="line">  linkcolor=blue,</span><br><span class="line">  citecolor=blue,</span><br><span class="line">  urlcolor=blue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\experiment</span>&#125;[1]&#123;<span class="keyword">\section</span>&#123;实验 <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\task</span>&#125;[1]&#123;<span class="keyword">\subsection</span>&#123;任务 <span class="params">#1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果格式要求比较复杂，例如学校有固定封面、页眉页脚、图表标题格式，可以继续在这个文件里扩展。正文文件只写内容，不要到处写格式命令。</p>
-<h3 id="4-3-插入图片示例"><a href="#4-3-插入图片示例" class="headerlink" title="4.3 插入图片示例"></a>4.3 插入图片示例</h3><p>图片路径同样以 <code>main.tex</code> 所在目录为基准。</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">  <span class="keyword">\centering</span></span><br><span class="line">  <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\textwidth</span>]&#123;figure/task1/result.png&#125;</span><br><span class="line">  <span class="keyword">\caption</span>&#123;任务一实验结果&#125;</span><br><span class="line">  <span class="keyword">\label</span>&#123;fig:task1-result&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<p>正文中引用图片：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如图~<span class="keyword">\ref</span>&#123;fig:task1-result&#125; 所示，实验结果符合预期。</span><br></pre></td></tr></table></figure>
-
-<p>图片命名建议使用英文、数字、下划线或短横线，例如 <code>task1_result.png</code>。尽量不要使用空格和特殊符号，避免跨平台路径问题。</p>
-<h2 id="5-Git-协作流程"><a href="#5-Git-协作流程" class="headerlink" title="5. Git 协作流程"></a>5. Git 协作流程</h2><h3 id="5-1-基本原则"><a href="#5-1-基本原则" class="headerlink" title="5.1 基本原则"></a>5.1 基本原则</h3><p>多人协作时，不要把 Git 当成网盘使用。Git 的核心价值是记录每次修改的原因和内容，所以提交要小而清晰。</p>
-<p>建议遵守以下原则：</p>
-<ul>
-<li>每个人负责明确的章节或任务文件</li>
-<li>修改前先拉取最新版本</li>
-<li>完成一个小功能或一小段内容后就提交</li>
-<li>不要把 <code>build/</code>、临时文件、日志文件提交到仓库</li>
-<li>尽量不要多人同时大改同一个 <code>.tex</code> 文件</li>
-<li>格式调整集中到模板文件，正文中少写临时格式命令</li>
-</ul>
-<h3 id="5-2-推荐流程"><a href="#5-2-推荐流程" class="headerlink" title="5.2 推荐流程"></a>5.2 推荐流程</h3><p>第一次参与项目：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone 仓库地址</span><br><span class="line"><span class="built_in">cd</span> 实验报告项目</span><br></pre></td></tr></table></figure>
-
-<p>每次开始写之前：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<p>完成一部分内容后：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add content/task1.tex content/task1/result.tex figure/task1/result.png</span><br><span class="line">git commit <span class="literal">-m</span> <span class="string">&quot;docs(task1): add result analysis&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-<p>如果团队使用分支协作，可以按任务创建分支：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">-b</span> task1<span class="literal">-report</span></span><br><span class="line">git push <span class="literal">-u</span> origin task1<span class="literal">-report</span></span><br></pre></td></tr></table></figure>
-
-<p>写完后再通过 Pull Request 或 Merge Request 合并到主分支。</p>
-<h3 id="5-3-提交信息建议"><a href="#5-3-提交信息建议" class="headerlink" title="5.3 提交信息建议"></a>5.3 提交信息建议</h3><p>提交信息不需要很长，但要让别人看得懂你改了什么。</p>
-<p>推荐格式：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docs(task1): add experiment principle</span><br><span class="line">docs(task2): update result analysis</span><br><span class="line">fix(format): adjust figure caption style</span><br><span class="line">chore: update gitignore</span><br></pre></td></tr></table></figure>
-
-<p>常见前缀：</p>
-<table>
-<thead>
-<tr>
-<th>前缀</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>docs</code></td>
-<td>修改报告正文、说明文档</td>
-</tr>
-<tr>
-<td><code>fix</code></td>
-<td>修复错误</td>
-</tr>
-<tr>
-<td><code>format</code></td>
-<td>调整排版格式</td>
-</tr>
-<tr>
-<td><code>chore</code></td>
-<td>更新配置、忽略文件等杂项</td>
-</tr>
-</tbody></table>
-<h3 id="5-4-gitignore-示例"><a href="#5-4-gitignore-示例" class="headerlink" title="5.4 .gitignore 示例"></a>5.4 <code>.gitignore</code> 示例</h3><p>LaTeX 编译会产生大量中间文件，这些文件不应该提交到 Git。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># LaTeX build output</span><br><span class="line">build/</span><br><span class="line"></span><br><span class="line"># Common LaTeX temporary files</span><br><span class="line">*.aux</span><br><span class="line">*.bbl</span><br><span class="line">*.bcf</span><br><span class="line">*.blg</span><br><span class="line">*.fdb_latexmk</span><br><span class="line">*.fls</span><br><span class="line">*.log</span><br><span class="line">*.out</span><br><span class="line">*.run.xml</span><br><span class="line">*.synctex.gz</span><br><span class="line">*.toc</span><br><span class="line"></span><br><span class="line"># Editor files</span><br><span class="line">.vscode/*</span><br><span class="line">!.vscode/settings.json</span><br></pre></td></tr></table></figure>
-
-<p>是否提交最终 PDF 可以由团队决定。一般建议源码仓库主要保存 <code>.tex</code>、图片、代码和参考文献；最终版 PDF 可以放到 <code>release/</code> 目录，或者通过平台的 Release 功能发布。</p>
-<h2 id="6-协作写作建议"><a href="#6-协作写作建议" class="headerlink" title="6. 协作写作建议"></a>6. 协作写作建议</h2><h3 id="6-1-一人负责一块，减少冲突"><a href="#6-1-一人负责一块，减少冲突" class="headerlink" title="6.1 一人负责一块，减少冲突"></a>6.1 一人负责一块，减少冲突</h3><p>可以按任务分工：</p>
-<table>
-<thead>
-<tr>
-<th>成员</th>
-<th>负责内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>A</td>
-<td>实验环境、实验原理</td>
-</tr>
-<tr>
-<td>B</td>
-<td>任务一方案、过程、结果</td>
-</tr>
-<tr>
-<td>C</td>
-<td>任务二方案、过程、结果</td>
-</tr>
-<tr>
-<td>D</td>
-<td>总结、格式检查、最终编译</td>
-</tr>
-</tbody></table>
-<p>多人协作最怕所有人都改 <code>main.tex</code>。通常只有维护目录结构的人需要修改 <code>main.tex</code>，其他人只改自己负责的 <code>content/</code> 文件。</p>
-<h3 id="6-2-正文尽量一行一句"><a href="#6-2-正文尽量一行一句" class="headerlink" title="6.2 正文尽量一行一句"></a>6.2 正文尽量一行一句</h3><p>LaTeX 源文件中的换行通常不会直接影响 PDF 排版，因此可以采用“一行一句”的写法。这样 Git diff 更清晰，发生冲突时也更容易处理。</p>
-<p>不推荐：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">本实验首先完成环境配置，然后实现核心算法，最后对实验结果进行分析。通过对比不同参数下的输出结果，可以发现模型在特定条件下具有更好的稳定性。</span><br></pre></td></tr></table></figure>
-
-<p>推荐：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">本实验首先完成环境配置，然后实现核心算法，最后对实验结果进行分析。</span><br><span class="line">通过对比不同参数下的输出结果，可以发现模型在特定条件下具有更好的稳定性。</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-3-统一标签命名"><a href="#6-3-统一标签命名" class="headerlink" title="6.3 统一标签命名"></a>6.3 统一标签命名</h3><p>交叉引用建议统一命名，避免重复。</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\label</span>&#123;fig:task1-result&#125;</span><br><span class="line"><span class="keyword">\label</span>&#123;tab:task2-params&#125;</span><br><span class="line"><span class="keyword">\label</span>&#123;eq:loss-function&#125;</span><br><span class="line"><span class="keyword">\label</span>&#123;sec:experiment-environment&#125;</span><br></pre></td></tr></table></figure>
-
-<p>常用前缀：</p>
-<table>
-<thead>
-<tr>
-<th>前缀</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>fig:</code></td>
-<td>图片</td>
-</tr>
-<tr>
-<td><code>tab:</code></td>
-<td>表格</td>
-</tr>
-<tr>
-<td><code>eq:</code></td>
-<td>公式</td>
-</tr>
-<tr>
-<td><code>sec:</code></td>
-<td>章节</td>
-</tr>
-<tr>
-<td><code>lst:</code></td>
-<td>代码</td>
-</tr>
-</tbody></table>
-<h3 id="6-4-善用-AI，但不要直接粘贴"><a href="#6-4-善用-AI，但不要直接粘贴" class="headerlink" title="6.4 善用 AI，但不要直接粘贴"></a>6.4 善用 AI，但不要直接粘贴</h3><p>AI 可以帮助润色、生成表格、解释编译错误、整理实验步骤，但最终内容仍然需要人工检查。尤其是实验报告中的数据、结论和参考文献，必须以实际实验结果为准。</p>
-<p>比较适合让 AI 做的事情：</p>
-<ul>
-<li>根据实验指导书整理报告结构</li>
-<li>将口语化描述润色成正式表达</li>
-<li>把实验数据整理成 LaTeX 表格</li>
-<li>根据报错日志定位 LaTeX 编译问题</li>
-<li>检查段落逻辑是否连贯</li>
-</ul>
-<p>不建议直接让 AI 生成最终结论后不检查就提交。实验报告最重要的是可复现、可解释、与真实结果一致。</p>
-<h2 id="7-常见问题"><a href="#7-常见问题" class="headerlink" title="7. 常见问题"></a>7. 常见问题</h2><h3 id="7-1-中文显示乱码"><a href="#7-1-中文显示乱码" class="headerlink" title="7.1 中文显示乱码"></a>7.1 中文显示乱码</h3><p>优先检查三件事：</p>
-<ol>
-<li><code>.tex</code> 文件是否保存为 UTF-8 编码</li>
-<li>是否使用 XeLaTeX 编译</li>
-<li>是否加载了 <code>ctex</code> 或使用了 <code>ctexart</code>、<code>ctexrep</code> 等中文文档类</li>
-</ol>
-<h3 id="7-2-引用显示为"><a href="#7-2-引用显示为" class="headerlink" title="7.2 引用显示为 ??"></a>7.2 引用显示为 <code>??</code></h3><p>常见原因是编译次数不够。目录、交叉引用和参考文献通常需要多轮编译。</p>
-<p>建议使用：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latexmk (xelatex)</span><br></pre></td></tr></table></figure>
-
-<p>它会自动判断需要编译几轮。</p>
-<h3 id="7-3-找不到图片"><a href="#7-3-找不到图片" class="headerlink" title="7.3 找不到图片"></a>7.3 找不到图片</h3><p>重点检查图片路径。只要从 <code>main.tex</code> 开始编译，图片路径就应该以 <code>main.tex</code> 所在目录为基准。</p>
-<p>正确示例：</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\includegraphics</span>&#123;figure/task1/result.png&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-4-编译突然出错"><a href="#7-4-编译突然出错" class="headerlink" title="7.4 编译突然出错"></a>7.4 编译突然出错</h3><p>可以按下面顺序排查：</p>
-<ol>
-<li>查看 VS Code 中 LaTeX Workshop 的错误信息</li>
-<li>打开 <code>build/</code> 目录中的 <code>.log</code> 文件</li>
-<li>清空 <code>build/</code> 后重新编译</li>
-<li>检查最近一次修改的 <code>.tex</code> 文件</li>
-<li>检查括号、环境、公式符号是否成对出现</li>
-</ol>
-<p>如果错误信息很长，可以把关键报错和相关 <code>.tex</code> 片段发给 AI 辅助分析。</p>
-<h3 id="7-5-Git-合并冲突怎么办"><a href="#7-5-Git-合并冲突怎么办" class="headerlink" title="7.5 Git 合并冲突怎么办"></a>7.5 Git 合并冲突怎么办</h3><p>冲突文件中通常会出现类似内容：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">当前分支的内容</span><br><span class="line">=======</span><br><span class="line">别人提交的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</span><br></pre></td></tr></table></figure>
-
-<p>处理方式：</p>
-<ol>
-<li>打开冲突文件</li>
-<li>判断应该保留哪部分，或手动合并两边内容</li>
-<li>删除 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>、<code>=======</code>、<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 标记</li>
-<li>保存文件并重新编译</li>
-<li><code>git add</code> 后提交</li>
-</ol>
-<p>不要在没看懂的情况下直接全部接受一边，否则容易把队友的内容覆盖掉。</p>
-<h2 id="8-最终交付前检查清单"><a href="#8-最终交付前检查清单" class="headerlink" title="8. 最终交付前检查清单"></a>8. 最终交付前检查清单</h2><p>提交最终报告前，建议检查：</p>
-<ul>
-<li><input disabled="" type="checkbox"> 能从 <code>main.tex</code> 成功编译出 PDF</li>
-<li><input disabled="" type="checkbox"> 目录、页码、图表编号正常</li>
-<li><input disabled="" type="checkbox"> 所有 <code>\ref{}</code>、<code>\cite{}</code> 都没有显示为 <code>??</code></li>
-<li><input disabled="" type="checkbox"> 图片路径正确，图片清晰且编号完整</li>
-<li><input disabled="" type="checkbox"> 表格没有超出页面</li>
-<li><input disabled="" type="checkbox"> 公式编号和引用一致</li>
-<li><input disabled="" type="checkbox"> 参考文献格式符合要求</li>
-<li><input disabled="" type="checkbox"> <code>build/</code> 和临时文件没有提交到 Git</li>
-<li><input disabled="" type="checkbox"> 每位成员负责的内容都已经合并</li>
-<li><input disabled="" type="checkbox"> 最终 PDF 已经人工通读一遍</li>
-</ul>
-<h2 id="9-参考链接"><a href="#9-参考链接" class="headerlink" title="9. 参考链接"></a>9. 参考链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_59559215/article/details/158886485">LaTeX 本地环境配置教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">Git 安装教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/367494699">VS Code Git 使用指南</a></li>
-</ul>
-<h2 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a>10. 总结</h2><p>本地 LaTeX 环境配合 Git 协作，真正解决的是两个问题：报告排版稳定，以及多人修改可追踪。只要项目结构清晰、分工明确、提交规范，实验报告就不会在最后一天变成一堆互相覆盖的文件。</p>
-<p>推荐的做法很简单：</p>
-<ol>
-<li>用 <code>main.tex</code> 组织全文</li>
-<li>用 <code>content/</code> 拆分正文</li>
-<li>用 <code>figure/</code> 管理图片</li>
-<li>用 <code>format/</code> 管理格式</li>
-<li>用 Git 管理每一次修改</li>
-<li>用 <code>build/</code> 收纳编译产物</li>
-</ol>
-<p>把这些习惯坚持下来，LaTeX 就不只是一个排版工具，而是一套更可靠的协作写作流程。</p>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" data-id="cuido0NpTxo_ENhXUSo4CL51x" data-title="LaTeX与Git协作技术分享" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a></li></ul>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">3.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-06-19T08:25:12.044Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Sakura</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, {"typeSpeed":100,"backSpeed":50,"startDelay":500,"backDelay":1500,"loop":false,"cursorChar":"|"}))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["古今多少事,都付谈笑中","夜深忽梦少年事，梦啼妆泪红阑干"].slice()
 
-    </footer>
-  </div>
-  
-</article>
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
 
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
 
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/06/19/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-06-19T03:06:31.492Z" itemprop="datePublished">2026-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/06/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/06/19/hello-world/" data-id="cuidlohB7HoLGbiiUwvb2dDHh" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTeX/" style="font-size: 10px;">LaTeX</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/06/19/LaTeX%E4%B8%8EGit%E5%8D%8F%E4%BD%9C%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">LaTeX与Git协作技术分享</a>
-          </li>
-        
-          <li>
-            <a href="/2026/06/19/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["古今多少事,都付谈笑中","夜深忽梦少年事，梦啼妆泪红阑干"])
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
