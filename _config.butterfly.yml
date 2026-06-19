@@ -171,13 +171,13 @@ subtitle:
     backSpeed: 50    # 删除速度 (毫秒)
     startDelay: 500  # 开始前的延迟 (毫秒)
     backDelay: 1500  # 删除前的停留时间 (毫秒)
-    loop: false     # 是否循环，会覆盖上层的 loop 设置
+    loop: true     # 是否循环，会覆盖上层的 loop 设置
     cursorChar: "|"  # 光标的字符
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - 古今多少事,都付谈笑中
-    - 夜深忽梦少年事，梦啼妆泪红阑干
+    - 个人博客,技术分享
+    - 密码学,计算机科学与技术
 
 
 # Article layout on the homepage
