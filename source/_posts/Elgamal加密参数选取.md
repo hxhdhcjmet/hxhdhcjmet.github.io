@@ -15,7 +15,7 @@ katex: true
  - 密钥生成:
     - 设$p$为素数,$Z_p^*$是阶为$p-1$的乘法循环群,$g \in Z_p^*$是生成元。
     - 明文空间$P = Z_p^*$,密文空间$C = Z_p^* \times Z_p^*$,随机选取$x \in \{1,\cdots,p-1\}$,计算
-  $ y = g^x \mod p $
+  $$ y = g^x \mod p $$
   - 私钥:$x$
   - 公钥:$p,g,y$
 - 加密:
@@ -24,7 +24,7 @@ katex: true
     - 输出$(c_1,c_2)$
 - 解密:
     - 计算
-  $ m = c_2 / c_1^x \mod p $
+  $$ m = c_2 / c_1^x \mod p $$
 
 这里解密正确性在于:
 $$  \frac{c_2}{c_1 ^ x} = \frac{y^km}{(g^k)^x} = \frac{g^{xk}m}{g^{xk}} = m $$
