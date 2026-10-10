@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hxhdhcjmet's Blog</title><meta name="author" content="Sakura"><meta name="copyright" content="Sakura"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hxhdhcjmet&#39;s Blog">
+<meta property="og:url" content="https://hxhdhcjmet.github.io/page/2/index.html">
+<meta property="og:site_name" content="Hxhdhcjmet&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hxhdhcjmet.github.io/images/avatar.jpg">
+<meta property="article:author" content="Sakura">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hxhdhcjmet.github.io/images/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hxhdhcjmet.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hxhdhcjmet\'s Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/images/background.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hxhdhcjmet's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Hxhdhcjmet's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/hxhdhcjmet" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lyj20060608@gmail.com" target="_blank" title="Email"><i class="as fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2871148635&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/06/thesis_study/Grafted-Tree/" title="Grafted_Tree">Grafted_Tree</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-06T09:59:09.000Z" title="发表于 2026-08-06 17:59:09">2026-08-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/">论文学习</a></span></div><div class="content"> Grafted Trees Bear Better Fruit: An Improved MV-PC SCA against Kyber         Author: Jinnuo Li ,Chi Cheng ,Muyann Shen ,Peng Chen ,Qian Guo ,Dongsheng Liu ,Liji Wu ,Jian Weng;   Journal: ,   Journal Tags:   Local Link: Grafted Trees Bear Better Fruit An Improved MV-PC SCA against Kyber.pdf   URL:   Abstract: As a prominent category of side-channel attacks (SCAs), plaintext-checking (PC) oracle-based SCAs offer the advantages of generality and operational simplicity on a targeted device. At T...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/04/thesis_study/Mismatch-lower-bound/" title="Mismatch_lower_bound">Mismatch_lower_bound</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-04T04:21:29.000Z" title="发表于 2026-08-04 12:21:29">2026-08-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/">论文学习</a></span></div><div class="content"> (2021) A Systematic Approach and Analysis of Key Mismatch Attacks on Lattice-Based NIST Candidate KEMs         Author: Mehdi Tibouchi; Huaxiong Wang; Yue Qin; Chi Cheng; Xiaohan Zhang; Yanbin Pan; Lei Hu; Jintai Ding;   Journal: , 13093: 92-121, 2021.   Journal Tags:   Local Link: Qin 等 - 2021 - A Systematic Approach and Analysis of Key Mismatch Attacks on Lattice-Based NIST Candidate KEMs.pdf   DOI: 10.1007/978-3-030-92068-5_4   Abstract: Research on key mismatch attacks against lattice-bas...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/02/cw_experiment/4-CPA/" title="4_CPA">4_CPA</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-02T15:12:30.000Z" title="发表于 2026-08-02 23:12:30">2026-08-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content"> CPA  Hamming Weight 比特串中1的个数即为该串的汉明重量(Hamming Weight,HW),python代码可以很容易实现: 12def calc_hamming_weight(n):    return bin(n).count(&quot;1&quot;) 为什么认为汉明重量与能量消耗有关?这是因为微控制器的能量消耗与其内部的数据操作有关,即越多的数据操作(越多位的翻转)，对应的能量消耗就越大。因此可以认为，数据中’1’的个数(即汉明重量)与能量消耗之间必然有一定关系。  定位Sbox 首要目标是定位Sbox发生在哪个位置,即在能量迹trace中定位发生Sbox操作的地方,直接采集输入明文第一字节(bnum = 0)过Sbox后的汉明重量,将其绘制成图,代码如下: 1234567891011121314151617from bokeh.plotting import figure, showfrom bokeh.io import output_notebookfrom bokeh.palettes import breweroutput_notebo...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/29/thesis_study/DL-based-Scas-Portability/" title="DL_based_Scas_Portability">DL_based_Scas_Portability</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-29T11:45:00.000Z" title="发表于 2026-07-29 19:45:00">2026-07-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/">论文学习</a></span></div><div class="content"> Enhancing Portability in Deep Learning-Based Side-Channel Attacks Against Kyber  此篇按论文阅读顺序记录学习内容,而非按一般论文结构  NICV:  定位泄漏点:采集并计算得到不同时间点的NICV,峰值代表此处泄露,攻击重点也就在这里。  分类:   Intra-board protability:相同设备,不同测量位置   Inter-board protability:不同设备   NICV Analysis: B1_MD~B1_MD2 &lt; B1_MD~B2_MD &lt; B1_MD~B1_corner 说明同板子间差异比不同板子间差异更显著 在某些情况下,探针位置带来的NICV差异会掩盖不同板子间的差异 MLPM(Multiple Leakage Point Model):多泄露点联合建模,使用如NICV、SNR等方法检测泄漏点,可以检测出多出泄漏点,综合使用这些点来建模恢复密钥。相较于传统单点模型,能够利用多个弱泄露、提升攻击成功率、更符合真实硬件泄露。 Ablated-MLPM:通...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/29/thesis_study/DL-SCAs-Covers/" title="DL_SCAs_Covers">DL_SCAs_Covers</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-29T11:35:31.000Z" title="发表于 2026-07-29 19:35:31">2026-07-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/">论文学习</a></span></div><div class="content"> Uncover Secrets Through the Cover: A Deep Learning-Based Side-Channel Attack Against Kyber Implementations With Anti-Tampering Covers  此篇按论文阅读顺序记录学习内容,而非按一般论文结构  leakage model:泄露模型-&gt;秘密到泄露的数学关系。 profiled attack:模板攻击,攻击者已经有一个与目标设备相同/相似的设备,训练阶段学习泄露特征,然后攻击目标设备。   decryption failure oracle:向系统询问某个问题,得到回答密文解密是否失败。类似padding oracle,服务器回答padding是否合法。   full decryption oracle:完全解密预言机,即选择密文攻击,输入密文得到对应的明文。   plaintext checking oracle:明文检验预言机,攻击者给出(c,m’),预言机回答密文解出来是不是m’.三者强度对比(泄露的信息):Full Decryption &...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/15/NTT/" title="NTT">NTT</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-15T07:32:37.000Z" title="发表于 2026-07-15 15:32:37">2026-07-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content"> NTT  问题描述 给定两个多项式 A(x)=a0+a1x+⋯+anxnB(x)=b0+b1x+⋯+bmxm  A(x) = a_0 + a_1x + \cdots + a_n x ^n \\     B(x) = b_0 + b_1x + \cdots + b_m x ^m \\ A(x)=a0​+a1​x+⋯+an​xnB(x)=b0​+b1​x+⋯+bm​xm 要求C(x)=A(x)B(x)C(x) = A(x)B(x)C(x)=A(x)B(x),当不用NTT(number theory transform)\texttt{NTT(number theory transform)}NTT(number theory transform)时,C(x)C(x)C(x)的每一项系数都需要卷积计算: ck=∑i=0kaibk−ic_k = \sum_{i = 0}^k a_ib_{k-i}   ck​=i=0∑k​ai​bk−i​ 如c0=a0b0c_0 = a_0b_0c0​=a0​b0​,a1=a0b1+a1+b0a_1 = a_0b_1 + a_1 + b_0a1​=a0​...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/14/Kyber%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88/" title="Kyber加密方案">Kyber加密方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-14T07:24:53.000Z" title="发表于 2026-07-14 15:24:53">2026-07-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content"> Kyber加密  本篇为Kyber加密方案的学习记录,可能存在错误,欢迎指正   前置知识   多项式环: 定义RRR为多项式环Z[X]/(Xn+1)\mathbb{Z}[X] / (X^n + 1)Z[X]/(Xn+1),RqR_qRq​为环Zq[X]/(Xn+1)\mathbb{Z}_q[X] / (X^n + 1)Zq​[X]/(Xn+1).   取整: 定义x∈Qx \in Qx∈Q,⌊x⌉\lfloor x \rceil⌊x⌉为取xxx距离最近的整数,等价定义为   ⌊x⌉=⌊x+12⌋\lfloor x \rceil  = \lfloor x + \frac{1}{2} \rfloor  ⌊x⌉=⌊x+21​⌋ 如⌊3.2⌉=⌊3.2+0.5⌋=3\lfloor 3.2 \rceil = \lfloor 3.2 + 0.5 \rfloor = 3⌊3.2⌉=⌊3.2+0.5⌋=3,⌊3.7⌉=⌊3.7+0.5⌋=4\lfloor 3.7 \rceil  = \lfloor 3.7 + 0.5 \rfloor = 4⌊3.7⌉=⌊3.7+0.5⌋=4.  元素的大小:...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/09/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" title="数字货币">数字货币</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-09T13:25:28.000Z" title="发表于 2026-07-09 21:25:28">2026-07-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content"> 数字货币——比特币与区块链  注:本文为个人学习总结,仅供参考,重点关注实现使用的密码技术   提出背景 2008年,一位自称&quot;中本聪(Satoshi Nakamoto)&quot;的神秘人在密码学讨论组Cryptography Mailing List公布他的论文《比特币:一种点对点的电子现金系统》(Bitcoin: A Peer-to-Peer Electronic Cash System)。该论文指出一种通过在线支付而无需任何金融机构,就可以将款项从一方直接发送到另一方的系统。该论文提出一种特殊的数字货币系统,即比特币(bitcoin),其研究动机是基于密码证明技术降低或消除交易参与方对于第三方的信任依赖,构建无需可信第三方的支付系统。 比特币提出时正值美国次贷危机爆发引起大规模世界金融危机,各国政府普遍采取量化宽松政策，大量超发货币，推动了全球范围内新一轮通货膨胀。政府动用公共资金救助因自身过失而陷入危机的大型金融机构，引发了广泛质疑。对比而言,比特币不是由某个国家发行的法定货币,其发行总量由系统设定的参数决定(2100万枚),也不需要依赖银行等权威机构参与交...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/07/08/%E8%83%BD%E9%87%8F%E5%88%86%E6%9E%90%E4%B8%AD%E8%83%BD%E9%87%8F%E8%BF%B9%E6%9D%A1%E6%95%B0%E4%BC%B0%E8%AE%A1/" title="能量分析中能量迹条数估计">能量分析中能量迹条数估计</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-07-08T09:09:53.000Z" title="发表于 2026-07-08 17:09:53">2026-07-08</time></span></div><div class="content"> 能量分析中能量迹条数估计  采样分布 对于同一个点、同样的数据和指令做一系列测量,得到的结果(比如电压降)并不是固定的,因此可以将这些结果的平均值和标准差视为随机变量.即平均值用随机变量Xˉ\bar XXˉ表示,标准差用随机变量SSS表示。对平均值和标准差用概率分布来分析,称为采样分布。 对于平均值Xˉ∼(μ,σ/n)\bar X \sim (\mu,\sigma/\sqrt n)Xˉ∼(μ,σ/n​)采样分布描述了对μ\muμ估计的准确程度 E(Xˉ)=μ,Var(Xˉ)=σ2nE(\bar X) = \mu,Var(\bar X) = \frac{\sigma ^2}{n}   E(Xˉ)=μ,Var(Xˉ)=nσ2​ 可见,用于计算Xˉ\bar XXˉ的能量迹点越多,估计越准确,平均值方差与能量迹数量成反比。所以,能量迹条数越多,平均值越接近于均值.同时可以得到结论:可以使用平均化来降低测量时的电子噪声。 对S2S^2S2的采样分布也有类似性质: E(S2)=σ2,Var(S2)=2⋅σ4n−1E(S^2) = \sigma ^2,Var(S^2) = \frac{2 \...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/06/26/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%90%86%E8%AE%BA/" title="复杂性理论">复杂性理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-06-26T12:25:05.000Z" title="发表于 2026-06-26 20:25:05">2026-06-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CS/">CS</a></span></div><div class="content"> 复杂性理论  本文为个人学习总结，内容可能存在错误或不完善之处，欢迎批评指正。   1. 引言 在计算机科学中，有一类问题是我们每天都在面对的：排序、搜索、最短路径……这些问题都有高效的算法，可以在合理的时间内解决。但还有另一类问题，比如&quot;一个地图中是否存在一条经过所有城市恰好一次的最短路径&quot;(旅行商问题)，或者&quot;给定一组数字，能否选出一些使它们的和恰好等于某个值&quot;(子集和问题)，这些问题随着输入规模的增长，求解所需的时间会急剧膨胀，以至于对于稍大的输入，即使动用全世界所有的计算资源也无法在可接受的时间内算出答案。 为什么有些问题&quot;容易&quot;而有些问题&quot;困难&quot;？这个&quot;容易&quot;和&quot;困难&quot;的边界究竟在哪里？这就是计算复杂性理论要回答的核心问题，而 P与NP问题 正是其中最重要、最著名的一个未解之谜。 一句话总结：P类问题是容易求解的，NP类问题是容易验证的，而P是否等于NP，至今无人知晓。  2. 图灵机计算模型 要严格讨论&quot;什么是可计算的&quot;以及&q...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sakura</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hxhdhcjmet"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/hxhdhcjmet" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lyj20060608@gmail.com" target="_blank" title="Email"><i class="as fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2871148635&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/20/thesis_study/second-order-attack-against-first-order-masked-kyber-experiment/" title="second-order-attack-against-first-order-masked-kyber-experiment">second-order-attack-against-first-order-masked-kyber-experiment</a><time datetime="2026-09-20T14:17:53.000Z" title="发表于 2026-09-20 22:17:53">2026-09-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/02/thesis_study/DL-SCA-of-Masked-SHA3/" title="DL-SCA-of-Masked-SHA3">DL-SCA-of-Masked-SHA3</a><time datetime="2026-09-02T10:40:14.000Z" title="发表于 2026-09-02 18:40:14">2026-09-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/26/thesis_study/Second-Order-SCA-on-Kyber/" title="Second-Order-SCA-on-Kyber">Second-Order-SCA-on-Kyber</a><time datetime="2026-08-26T03:15:10.000Z" title="发表于 2026-08-26 11:15:10">2026-08-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/21/thesis_study/Exploit-Message-Leakage-Storage-leakage/" title="Exploit-Message-Leakage-Storage-leakage">Exploit-Message-Leakage-Storage-leakage</a><time datetime="2026-08-21T02:11:34.000Z" title="发表于 2026-08-21 10:11:34">2026-08-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/18/thesis_study/Magnify-SCL-against-Kyber/" title="Magnify-SCL-against-Kyber">Magnify-SCL-against-Kyber</a><time datetime="2026-08-18T09:41:29.000Z" title="发表于 2026-08-18 17:41:29">2026-08-18</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS/"><span class="card-category-list-name">CS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="card-category-list-name">密码学</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">技术笔记</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">论文学习</span><span class="card-category-list-count">12</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 1.1em; color: #999">数论</a> <a href="/tags/%E8%83%BD%E9%87%8F%E8%BF%B9%E6%9D%A1%E6%95%B0%E4%BC%B0%E8%AE%A1/" style="font-size: 1.1em; color: #999">能量迹条数估计</a> <a href="/tags/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/" style="font-size: 1.18em; color: #999ca1">论文复现</a> <a href="/tags/Power-difference/" style="font-size: 1.1em; color: #999">Power_difference</a> <a href="/tags/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%90%86%E8%AE%BA/" style="font-size: 1.1em; color: #999">复杂性理论</a> <a href="/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/" style="font-size: 1.1em; color: #999">数字货币</a> <a href="/tags/Elgamal%E5%8A%A0%E5%AF%86/" style="font-size: 1.1em; color: #999">Elgamal加密</a> <a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" style="font-size: 1.1em; color: #999">比特币</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.18em; color: #999ca1">深度学习</a> <a href="/tags/%E8%83%BD%E9%87%8F%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">能量分析</a> <a href="/tags/CPA/" style="font-size: 1.1em; color: #999">CPA</a> <a href="/tags/%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96%E7%BB%86%E8%8A%82/" style="font-size: 1.1em; color: #999">参数选取细节</a> <a href="/tags/DPA/" style="font-size: 1.1em; color: #999">DPA</a> <a href="/tags/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81/" style="font-size: 1.1em; color: #999">后量子密码</a> <a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">抽象代数</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 1.1em; color: #999">计算理论</a> <a href="/tags/%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/" style="font-size: 1.34em; color: #99a3b0">论文学习</a> <a href="/tags/kyber/" style="font-size: 1.18em; color: #999ca1">kyber</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97/" style="font-size: 1.1em; color: #999">快速计算</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/tags/Typst/" style="font-size: 1.1em; color: #999">Typst</a> <a href="/tags/FD-Oracle/" style="font-size: 1.18em; color: #999ca1">FD Oracle</a> <a href="/tags/%E6%8E%A9%E7%A0%81%E4%BE%A7%E4%BF%A1%E9%81%93%E6%94%BB%E5%87%BB/" style="font-size: 1.1em; color: #999">掩码侧信道攻击</a> <a href="/tags/NTT/" style="font-size: 1.1em; color: #999">NTT</a> <a href="/tags/cw-experiment/" style="font-size: 1.26em; color: #999fa8">cw_experiment</a> <a href="/tags/LaTeX/" style="font-size: 1.1em; color: #999">LaTeX</a> <a href="/tags/%E4%BE%A7%E4%BF%A1%E9%81%93%E6%94%BB%E5%87%BB/" style="font-size: 1.5em; color: #99a9bf">侧信道攻击</a> <a href="/tags/DeepLearning/" style="font-size: 1.1em; color: #999">DeepLearning</a> <a href="/tags/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7/" style="font-size: 1.1em; color: #999">可移植性</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.26em; color: #999fa8">密码学</a> <a href="/tags/%E9%AB%98%E9%98%B6%E6%8E%A9%E7%A0%81/" style="font-size: 1.1em; color: #999">高阶掩码</a> <a href="/tags/%E9%97%AE%E9%A2%98%E5%88%86%E7%B1%BB/" style="font-size: 1.1em; color: #999">问题分类</a> <a href="/tags/Mismatch%E6%94%BB%E5%87%BB/" style="font-size: 1.1em; color: #999">Mismatch攻击</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98/" style="font-size: 1.1em; color: #999">数学困难问题</a> <a href="/tags/Kyber/" style="font-size: 1.42em; color: #99a6b7">Kyber</a> <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 1.1em; color: #999">区块链</a> <a href="/tags/%E6%8E%92%E7%89%88%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">排版工具</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/09/">
+            <span class="card-archive-list-date">
+              九月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">11</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">24</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">85.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-10T06:15:11.063Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Sakura</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, {"typeSpeed":100,"backSpeed":50,"startDelay":500,"backDelay":1500,"loop":true,"cursorChar":"|"}))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["个人博客,技术分享","密码学,计算机科学与技术"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["个人博客,技术分享","密码学,计算机科学与技术"])
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
